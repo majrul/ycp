@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>NewWebApp</display-name>
+
+  <servlet>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>com.cdac.servlet.HelloServlet</servlet-class>
+    <!-- <load-on-startup>1</load-on-startup> -->
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hello</servlet-name>
+    <url-pattern>/hello.cdac</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>tatkal</servlet-name>
+    <servlet-class>com.cdac.servlet.TatkalBookingServlet</servlet-class>
+    <init-param>
+      <param-name>from</param-name>
+      <param-value>8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>to</param-name>
+      <param-value>17</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>tatkal</servlet-name>
+    <url-pattern>/tatkalbooking.irctc</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>homepage.html</welcome-file>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.html</location>
+  </error-page>
+
+  <session-config>
+    <session-timeout>5</session-timeout>
+  </session-config>
+</web-app>
