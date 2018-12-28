@@ -1,0 +1,9 @@
+Use the spring-boot-demo.zip as the starting point
+The above zip contains a maven project with spring boot settings already in place
+
+select the following option:
+In eclipse->file->import->maven->existing maven projects
+
+Then browse the zip/extracted folder
+
+Now write the code in this project in eclipse

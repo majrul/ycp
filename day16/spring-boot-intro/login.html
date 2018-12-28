@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.2.1.js"></script>
+<script>
+$(function() {
+	$("#loginForm").submit(function(evt) {
+		evt.preventDefault();
+		//var username = $("#username").val();
+		//var password = $("#password").val();
+		//alert(username);
+		
+		var user = {
+				username : $("#username").val(),
+				password : $("#password").val()
+		};
+		//alert(user.username);
+		//alert(JSON.stringify(user));
+		var userjson = JSON.stringify(user);
+		
+		$.ajax({
+			url : 'loginController',
+			type : 'POST',
+			data : userjson,
+			contentType : 'application/json',
+			success : function(response) {
+				alert(JSON.stringify(response));
+			}
+		})
+	})
+})
+</script>
+</head>
+<body>
+<form id="loginForm">
+Enter username : <input type="text" id="username" /> <br/>
+Enter password : <input type="password" id="password" /> <br/>
+<input type="submit" value="Login" />
+</form>
+</body>
+</html>
